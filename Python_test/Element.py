@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# coding: utf-8
+# -*- coding: utf-8 -*-
 __author__ = 'Yee_172'
 __data__ = '2017/9/4'
 
@@ -57,3 +57,7 @@ class Card:
     def __ne__(self, other):
         """ Judge if two cards are not equal """
         return False if self == other else True
+
+# ---[test zone]---
+C1 = Card(13, 'C')
+print(C1)
