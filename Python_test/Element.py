@@ -54,9 +54,6 @@ class Card:
 
         return True if self.suit == other.suit and self.point == other.point else False
 
-    def __ne__(self, other):
-        """ Judge if two cards are not equal """
-        return False if self == other else True
 
 # ---[test zone]---
 C1 = Card(13, 'C')
