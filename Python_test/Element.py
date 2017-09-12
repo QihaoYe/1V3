@@ -69,7 +69,7 @@ class Hand:
                 raise Exception('Each Card must be valid!')
 
         pass
-    
+
 
 # ---[test zone]---
 C1 = Card(13, 'C')
