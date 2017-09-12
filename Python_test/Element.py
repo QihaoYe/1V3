@@ -43,20 +43,33 @@ class Card:
         if mode not in ['SHOW', 'FULL']:
             raise Exception('Mode must in [SHOW, FULL]!')
 
-        if mode == 'SHOW':
+        if mode is 'SHOW':
             return POINTS_SHOW[self.point] if self.suit is None \
                 else SUITS_SHOW[self.suit] + POINTS_SHOW[self.point]
-        if mode == 'FULL':
+        if mode is 'FULL':
             return POINTS_FULL[self.point] if self.suit is None \
                 else 'the ' + POINTS_FULL[self.point] + ' of ' + SUITS_FULL[self.suit]
 
     def __eq__(self, other):
         """ Judge if two cards are equal """
-        if not isinstance(other, Card):
+        if isinstance(other, Card) is False:
             raise Exception('Must compare with Card!')
 
         return True if self.suit == other.suit and self.point == other.point else False
 
+
+class Hand:
+    """
+    Hand class
+    """
+
+    def __init__(self, *cards):
+        for each in cards:
+            if isinstance(each, Card) is False:
+                raise Exception('Each Card must be valid!')
+
+        pass
+    
 
 # ---[test zone]---
 C1 = Card(13, 'C')
